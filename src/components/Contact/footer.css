@@ -1,0 +1,32 @@
+.social_icons {
+    height: 3%;
+    padding: 1% 0;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #282c34;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    right:0;
+    width: 100%;
+    z-index: 4;
+    border-top: 1px solid grey;
+  }
+  
+  .social_icons a {
+    color:white;
+    text-decoration: none;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .social_icons {
+      max-width: 100%;
+      flex-direction: row;
+      margin: auto;
+     /*  padding: 5% 0; */
+      align-items: flex-start;
+   
+    }
+  
+  }

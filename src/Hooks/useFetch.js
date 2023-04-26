@@ -1,11 +1,11 @@
 import { useState, useEffect ,useRef} from 'react';
 import axios from 'axios';
 
-const useFetch = (location) => {
+const useFetch = (location,days) => {
 console.log(location)
     const key = '72b6082af2c24437893155504232404';
 
-    let uri = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}`
+    let uri = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=${days}`
 
     const [data,setData] = useState({});
     const [loading, setLoading ] = useState(false);
@@ -27,7 +27,7 @@ console.log(location)
           }
         };
         fetchData();
-        return ()=>console.log('unmounted')
+        /* return ()=>console.log('unmounted') */
       }, [uri]);
       return { data, loading, error };
 

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import '../App.css'
 
-const Location = ({ handleChangeCountry,data }) => {
+const Location = ({ handleChangeCountry,handleDays, data,days }) => {
 
 
   const Countries = ['Copenhagen',
@@ -25,17 +26,23 @@ const Location = ({ handleChangeCountry,data }) => {
   ]
 
   return (
-    <div style={{ backgroundColor: '#85586F'}}>
-      <section style={{display:'flex', justifyContent:'space-between',alignItems:'center',padding:'0px 15px'}}>
-      <p>{Object.keys(data).length !== 0 && data.forecast.forecastday[0].date}</p>
-        <p style={{ color: 'white', margin: 0 }}> {"Select Location"}
-          <select style={{ margin: '10px' }} onChange={handleChangeCountry}>
+    <div className='location-Container'>
 
+      <section className='location-section'>
+
+       {/*  <p>{Object.keys(data).length !== 0 && data.forecast.forecastday[0].date}</p> */}
+       {/*  <section> */}
+        <p className='location-label' > {"What is the temperature in"}
+
+          <select className='select-location' onChange={handleChangeCountry}>
             {Countries.map((country, i) => <option key={i} style={{ width: '30%' }} value={country}>{country}</option>)}
-
-          </select></p>
+          </select>{"for the next "}
+          <input type='number' onChange={handleDays} value={days}  min="1" max="10"/> days. (max:10days)
+        </p>
+        {/* </section> */}
 
       </section>
+
 
     </div>
   )
