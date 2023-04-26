@@ -94,6 +94,7 @@ nav.navigation>a.active {
 /* Cards Component */
 
 .cards {
+  padding-left: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 10px;
@@ -165,17 +166,19 @@ nav.navigation>a.active {
 
 /* Small devices ( phones, 576px and below) */
 @media (max-width: 576px) {
-.App{
-  font-size: 15px;
-}
+  .App {
+    font-size: 15px;
+  }
+
   .App-header {
     padding: 15px;
     display: block;
     font-size: 20px;
   }
-  .region-section{
-    display:block;
-    padding:10px;
+
+  .region-section {
+    display: block;
+    padding: 10px;
   }
 
   .location-section {
@@ -184,7 +187,7 @@ nav.navigation>a.active {
   }
 
   .cards {
-padding-left: 0;
+  
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 10px;
@@ -255,4 +258,3 @@ padding-left: 0;
     font-size: 15px;
   }
 }
-
